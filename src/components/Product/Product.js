@@ -17,7 +17,7 @@ export const Product = ({ value, handlePizzaId }) => {
                 </Card.Text>
                 <h4 className='text-center mt-2 mb-2'><b>{value.price} $</b></h4>
                 <div className='text-center mt-4'>
-                    <Button onClick={handlePizzaId} id={value.id} variant="primary"><i className="fas fa-shopping-basket"></i></Button>
+                    <Button onClick={handlePizzaId} id={value.id} variant="primary"><i id={value.id} className="fas fa-shopping-basket"></i></Button>
                 </div>
             </Card.Body>
         </Card>

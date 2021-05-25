@@ -24,10 +24,10 @@ export const ProductList = () => {
         setShoBasket(!shoBasket);
         dispatch(showBasket(shoBasket));
     }
-    const handlePizzaId = (e) => {
-        const basketItem = products.filter(x => x.id === Number(e.target.id));
-        dispatch(addToBasket(basketItem[0]));
-    }
+    const handlePizzaId = useCallback((e) => {
+        const x = products.filter(x => x.id === Number(e.target.id));
+        console.log(x)
+    }, [products])
 
     useEffect(() => {
         fetchProducts();
