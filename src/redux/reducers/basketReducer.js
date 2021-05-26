@@ -11,12 +11,7 @@ export const basketReducer = (state = { condition: false }, { type, payload }) =
     }
 }
 
-const initialState = {
-    items: [
-    ]
-}
-
-export const basketReduce = (state = initialState, { type, payload }) => {
+export const basketReduce = (state = { items: [] }, { type, payload }) => {
     switch (type) {
         case ActionTypes.ADD_TO_BASKET:
             return { ...state, items: [...state.items, payload] }

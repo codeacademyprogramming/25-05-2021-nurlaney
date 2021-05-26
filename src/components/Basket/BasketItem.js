@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const BasketItem = (details) => {
+export const BasketItem = ({ items }) => {
     return (
         <div className='basketItem'>
             <ul>
@@ -10,7 +10,7 @@ export const BasketItem = (details) => {
                             <img src='https://isko88.github.io/pizza/1.png' alt='pizza small' />
                         </div>
                         <div className='pizza-name'>
-                            <span>{details.name}</span>
+                            <span>{items.name}</span>
                             <br />
                             <span><b>small</b></span>
                         </div>
@@ -18,13 +18,12 @@ export const BasketItem = (details) => {
                             <span>x1</span>
                         </div>
                         <div className='pizza-price'>
-                            <span><b>24$</b></span>
+                            <span><b>{items.price}$</b></span>
                         </div>
                         <div className='pizza-remove'>
                             <span className='text-danger'><b>X</b></span>
                         </div>
                     </div>
-
                 </li>
             </ul>
         </div>

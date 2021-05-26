@@ -5,13 +5,21 @@ import { BasketItem } from './BasketItem';
 
 export const Basket = () => {
     const basketCondition = useSelector(state => state.basketCondition.condition);
-    const basketItems = useSelector(state => state.basketItems);
+    const bitems = useSelector(state => state.basketItems);
 
     return (
         <div className={`basket ${!basketCondition ? 'd-none' : ''}`}>
             <h3>Your Cart</h3>
             <hr />
-            < BasketItem />
+            {
+                bitems.items.length === 0 ?
+                    'empty'
+                    :
+                    bitems.items.map((x) => (
+                        < BasketItem key={x.id} items={x} />
+                    ))
+            }
+
             <hr />
             <div className='basket-footer d-flex'>
                 <h4><b>Subtotal</b></h4>
